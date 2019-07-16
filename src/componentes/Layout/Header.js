@@ -11,15 +11,39 @@ const Header = () => (
 
             <div className="collapse navbar-collapse" id="navegacion">
                 <ul className="navbar-nav ml-auto text-right">
-                    <li className="nav-item active">
-                        <Link to="/cliente/nuevo" className="btn btn-success mr-2">
-                            Nuevo cliente
-                        </Link>
+                    <li className="nav-item dropdown mr-md-2 mb-2 mb-md-0">
+                        <button 
+                            className="nav-link dropdown-toggle btn btn-block btn-success"
+                            data-toggle="dropdown"
+                        >
+                            Clientes
+                        </button>
+                        <div className="dropdown-menu" arial-labelledby="navegacion">
+                            <Link to="/clientes" className="dropdown-item">
+                                Ver clientes
+                            </Link>
+                            <Link to="/clientes/nuevo" className="dropdown-item">
+                                Nuevo cliente
+                            </Link>
+                        </div>
                     </li>
-                    <li className="nav-item active">
-                        <Link to="/productos/nuevo" className="btn btn-success">
-                            Nuevo producto
-                        </Link>
+
+                    <li className="nav-item dropdown">
+                        <button 
+                            className="nav-link dropdown-toggle btn btn-block btn-success"
+                            data-toggle="dropdown"
+                        >
+                            Productos
+                        </button>
+                        <div className="dropdown-menu" arial-labelledby="navegacion">
+                            <Link to="/productos" className="dropdown-item">
+                                Ver productos
+                            </Link>
+                            <Link to="/productos/nuevo" className="dropdown-item">
+                                Nuevo producto
+                            </Link>
+                        </div>
+                        
                     </li>
                 </ul>
             </div>
