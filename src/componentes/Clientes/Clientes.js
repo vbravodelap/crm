@@ -23,6 +23,9 @@ class Clientes extends Component{
 
     paginaAnterior = () => {
         this.setState({
+
+
+            
             paginador: {
                 offset: this.state.paginador.offset - this.limite,
                 actual: this.state.paginador.actual - 1
@@ -69,6 +72,12 @@ class Clientes extends Component{
                                                     {item.nombre} {item.apellido} - {item.empresa}
                                                 </div>
                                                 <div className="col-md-4 d-flex justify-content-end">
+                                                    <Link 
+                                                        to={`/pedidos/nuevo/${id}`}
+                                                        className="btn btn-warning d-block d-md-inline-block mr-2"
+                                                    >
+                                                        &#43; Nuevo pedido
+                                                    </Link>
                                                     <Mutation 
                                                         mutation={ELIMINAR_CLIENTE}
                                                         onCompleted={(data) => {

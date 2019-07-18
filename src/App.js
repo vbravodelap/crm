@@ -11,6 +11,7 @@ import NuevoCliente from './componentes/Clientes/NuevoCliente';
 import NuevoProducto from './componentes/Productos/NuevoProducto';
 import Productos from './componentes/Productos/Productos';
 import EditarProducto from './componentes/Productos/EditarProducto';
+import NuevoPedido from './componentes/Pedidos/NuevoPedido';
 
 const client = new ApolloClient({
 
@@ -40,6 +41,7 @@ function App() {
               <Route exact path="/productos/nuevo" component={NuevoProducto}/ >
               <Route exact path="/productos" component={Productos}/ >
               <Route exact path="/productos/editar/:id" component={EditarProducto}/ >
+              <Route exact path="/pedidos/nuevo/:id" component={NuevoPedido}/>
             </Switch>
           </div>
         </Fragment>
