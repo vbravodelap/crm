@@ -8,7 +8,7 @@ import Paginador from '../Paginador';
 
 class Productos extends Component {
 
-    limite = 5;
+    limite = 10;
 
     state = {
         paginador: {

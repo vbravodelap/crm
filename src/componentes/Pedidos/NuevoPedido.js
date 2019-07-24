@@ -30,7 +30,7 @@ class NuevoPedido extends Component {
 
                     <div className="col-md-9">
 
-                        <Query query={OBTENER_PRODUCTOS}>
+                        <Query query={OBTENER_PRODUCTOS} variables={{stock: true}}>
                             {({ loading, error, data}) => {
                                 if(loading) return (
                                     <div className="spinner">
