@@ -76,9 +76,13 @@ class Productos extends Component {
                                         {data.obtenerProductos.map(item => {
                                             const {id} = item;
 
+                                            const {stock} = item;
+
+                                            let clase = (stock < 5) ? 'table-danger' : '';
+
                                             return(
 
-                                                <tr key={id}>
+                                                <tr key={id} className={clase}>
 
                                                     <td>{item.nombre}</td>
                                                     <td>{item.precio}</td>
