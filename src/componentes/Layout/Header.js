@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom'
+import CerrarSesion from './CerrarSesion';
 
-const Header = () => (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between d-flex mb-4">
-        <div className="container">
-            <Link to="/" className="navbar-brand text-light font-weight-bold">CRM</Link>
+const Header = ({session}) => {
+
+    let barra = (session.obtenerUsuario) ? <NavegacionAutenticado /> : <NavegacionNoAutenticado />
+
+    return(
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between d-flex mb-4">
+            <div className="container">
+                {barra}
+            </div>
+        </nav>
+    )
+};
+
+const NavegacionNoAutenticado = () => (
+    <h3 to="/" className="navbar-brand text-light font-weight-bold">CRM</h3>
+)
+
+const NavegacionAutenticado = () => (
+    <Fragment>
+        <Link to="/" className="navbar-brand text-light font-weight-bold">CRM</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -45,10 +62,11 @@ const Header = () => (
                         </div>
                         
                     </li>
+
+                    <CerrarSesion />
                 </ul>
             </div>
-        </div>
-    </nav>
-);
+    </Fragment>
+)
 
 export default Header;

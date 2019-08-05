@@ -15,12 +15,10 @@ const datos = [
 
 const Clientes = () => {
     return ( 
-        <Query query={TOP_CLIENTES}>
-            {({loading, error, data}) => {
+        <Query query={TOP_CLIENTES} pollInterval={1000}>
+            {({loading, error, data, startPolling, stopPolling}) => {
                 if(loading) return 'Cargando...';
                 if(error) return `${error.message}`;
-
-                console.log(data);
 
                 const topClientesGrafica = [];
 
@@ -30,8 +28,6 @@ const Clientes = () => {
                         ...pedido.cliente[0]
                     }
                 })
-
-                console.log(topClientesGrafica);
 
                 return(
                     <BarChart width={600} height={300} data={topClientesGrafica}
